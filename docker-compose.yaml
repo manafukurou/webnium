@@ -16,7 +16,7 @@ services:
   app:
     build: ./python
     ports:
-      - 8000:8000
+      - "8000:8000"      
     volumes:
       - ./python:/home/workspace
     tty: true
