@@ -16,9 +16,10 @@ services:
   app:
     build: ./python
     ports:
-      - "8000:8000"      
+      - "8000:8000"
     volumes:
       - ./python:/home/workspace
+      - ./python_django:/home/python_django
     tty: true
   mysql:
     image: mysql:5.7

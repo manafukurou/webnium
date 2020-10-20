@@ -3,4 +3,4 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
-WORKDIR /home/workspace
+WORKDIR /home/python_django/webnium

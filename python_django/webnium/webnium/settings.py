@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h$cqslqbcy-3g1ap&*26ov6-*&2f)ma@r&vcckn_lhcrczv9b0'
+SECRET_KEY = '@s76=o#m#oxk_5w025lvgm%-=xzpa$38pl3g9)8*-+(s(h092i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'webnium.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # 変更
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webnium',
         'USER': 'root',
         'PASSWORD': 'root',
