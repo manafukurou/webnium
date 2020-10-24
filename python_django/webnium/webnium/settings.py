@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@s76=o#m#oxk_5w025lvgm%-=xzpa$38pl3g9)8*-+(s(h092i'
+SECRET_KEY = ')t08-&vg7&i5%%q8@hzw86^ngb9dt8$vcfwocpa4ll2!m*&1p_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,14 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 MIDDLEWARE = [
@@ -75,6 +73,7 @@ WSGI_APPLICATION = 'webnium.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,6 +83,7 @@ DATABASES = {
         'HOST': 'local.mysql',
     }
 }
+
 
 
 # Password validation
