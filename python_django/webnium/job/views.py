@@ -1,9 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
-def hellofunction(request):
+def list(request):
     message = "はろーなわーるど"
     params = {
         'message': message,
     }
     return render(request, 'list.html', params)
+
+def detail(request):
+    message = "ディティール"
+    params = {
+        'message': message,
+    }
+    return render(request, 'detail.html', params)

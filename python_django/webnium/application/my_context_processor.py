@@ -1,2 +1,2 @@
 def common(request):
-  return {"context1":"あふぁふぁふぁふぁふぁ"}
+  return {"title":"ttt"}
