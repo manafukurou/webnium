@@ -1,0 +1,20 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+{% include 'head.html' %}
+<body>
+    <div id="app">
+        <main>
+
+      {% block content %}
+      {{ content }}
+      {% endblock %}
+            <br><br>
+        </main>
+    </div>
+    <footer class="mw-100 footer text-center fixed-bottom" id="footer_content">
+        Copyright(C). manafukurou All Rights Reserved.
+    </footer>
+</body>
+</html>

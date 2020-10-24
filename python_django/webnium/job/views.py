@@ -1,6 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 def hellofunction(request):
-
-    return HttpResponse('<h1>hello world</h1>')
+    message = "はろーなわーるど"
+    params = {
+        'message': message,
+    }
+    return render(request, 'list.html', params)
