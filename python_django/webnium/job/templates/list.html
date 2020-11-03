@@ -1,6 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Hello, World!</h1>
-<li>{{message}}</li>
+
 <a href="{% url 'detail' %}">detail</a>
+
+
+
+
+<h1>ページネーション確認ページ</h1>
+
+{% for job in jobs %}
+<p>{{ job.id }} : {{ job.job_name }}</p>
+{% endfor %}
+{% if jobs.has_other_pages %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if jobs.has_previous %}
+            <li><a class="page-link text-primary d-inline-block" href="?page={{ jobs.previous_page_number }}"><<</a></li>
+        {% else %}
+            <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#"><<</div></li>
+        {% endif %}
+
+        {% for page_num in jobs.paginator.page_range %}
+            {% if page_num %}
+                {% if page_num == jobs.number %}
+                    <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#">{{ page_num }}</div></li>
+                {% else %}
+                    <li><a class="page-link text-primary d-inline-block" href="?page={{ page_num }}">{{ page_num }}</a></li>
+                {% endif %}
+            {% else %}
+                <li class="disabled"><a class="page-link text-secondary d-inline-block text-muted" href="#">・・・</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if jobs.has_next %}
+            <li><a class="page-link text-primary d-inline-block" href="?page={{ jobs.next_page_number }}">>></a></li>
+        {% else %}
+            <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#">>></div></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
 {% endblock %}
