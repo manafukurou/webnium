@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from job.models import Job
 
 # Create your views here.
 def list(request):
-    message = "はろーなわーるど"
+    jobData = Job.objects.get(id=3)
+    message = jobData.job_name
+    print(message)
     params = {
         'message': message,
     }
