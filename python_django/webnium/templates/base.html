@@ -5,12 +5,11 @@
 <body>
     {% include 'header.html' %}
     <div id="app">
-        <main>
-
-      {% block content %}
-      {{ content }}
-      {% endblock %}
-            <br><br>
+        <main class="m-2">
+          {% block content %}
+          {{ content }}
+          {% endblock %}
+          <br><br>
         </main>
     </div>
     <footer class="mw-100 footer text-center fixed-bottom" id="footer_content">

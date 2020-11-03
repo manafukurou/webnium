@@ -5,7 +5,7 @@ from job.models import Job
 # Create your views here.
 def list(request):
 
-    job_list = Job.objects.order_by('id').reverse()
+    job_list = Job.objects.all()
     job_paginator = Paginator(job_list, 5)
 
     page = request.GET.get('page', 1)
@@ -32,3 +32,8 @@ def detail(request):
     }
     return render(request, 'detail.html', params)
 
+def edit(request):
+    params = {
+        'message': "edit",
+    }
+    return render(request, 'detail.html', params)

@@ -1,17 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Hello, World!</h1>
 
-<a href="{% url 'detail' %}">detail</a>
+<a href="{% url 'edit' %}" class="btn btn-danger float-right m-2">create new Job</a>
 
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">job_name</th>
 
+    </tr>
+  </thead>
+  <tbody>
 
+    {% for job in jobs %}
 
-<h1>ページネーション確認ページ</h1>
+    <tr>
+      <th scope="row">{{ job.id }}</th>
+      <td>{{ job.job_name }}</td>
+    </tr>
 
-{% for job in jobs %}
-<p>{{ job.id }} : {{ job.job_name }}</p>
-{% endfor %}
+    {% endfor %}
+
+  </tbody>
+</table>
+
 {% if jobs.has_other_pages %}
 <nav aria-label="Page navigation example">
     <ul class="pagination">
