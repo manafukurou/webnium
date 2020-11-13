@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from job.models import Job
+from .forms import JobForm
+import datetime
 
 # Create your views here.
 def list(request):
@@ -26,14 +28,38 @@ def list(request):
 def detail(request):
 
     jobData = Job.objects.get(id=3)
-    message = jobData.job_name
+
     params = {
         'message': message,
     }
     return render(request, 'detail.html', params)
 
 def edit(request):
+
+    initial_dict = dict(
+        job_name="jojojojo"
+    )
+    job_form = JobForm(request.GET or None,initial=initial_dict)
+
     params = {
         'message': "edit",
+        'job_form': job_form
     }
-    return render(request, 'detail.html', params)
+    return render(request, 'edit.html', params)
+
+# def confirm(request):
+#     jobData = Job.objects.get(id=3)
+#     message = jobData.job_name
+#     params = {
+#         'message': message,
+#     }
+#     return render(request, 'detail.html', params)
+
+
+def confirm( request, *args, **kwargs):
+    jobObject = Job(job_name=request.POST['job_name'],pub_date=datetime.datetime.now())
+    jobObject.save()
+    context = {
+        'job_name': request.POST['job_name']
+    }
+    return render(request, 'confirm.html', context)
