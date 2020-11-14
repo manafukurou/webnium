@@ -34,10 +34,10 @@ def detail(request):
     }
     return render(request, 'detail.html', params)
 
-def edit(request):
+def new_job(request):
 
     initial_dict = dict(
-        job_name="jojojojo"
+        job_name=""
     )
     job_form = JobForm(request.GET or None,initial=initial_dict)
 
@@ -45,16 +45,16 @@ def edit(request):
         'message': "edit",
         'job_form': job_form
     }
-    return render(request, 'edit.html', params)
+    return render(request, 'new_job.html', params)
 
-# def confirm(request):
-#     jobData = Job.objects.get(id=3)
-#     message = jobData.job_name
-#     params = {
-#         'message': message,
-#     }
-#     return render(request, 'detail.html', params)
 
+def edit(request,job_id):
+    context = {
+        'job_id': job_id
+    }
+    return render(request, 'edit.html', context)
+
+    return "";
 
 def confirm( request, *args, **kwargs):
     jobObject = Job(job_name=request.POST['job_name'],pub_date=datetime.datetime.now())
