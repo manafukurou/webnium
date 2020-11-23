@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Hello, World!</h1>
+<p class="text-center">
+    create new job
+</p>
     <form action="{% url 'confirm' %}" method="post">
         {% csrf_token %}
         {{ job_form.job_name }}
-        <button type="submit">送信</button>
+        {{ job_form.job_id.as_hidden }}
+        <button type="submit" class="btn btn-danger">create</button>
     </form>
 
 {% endblock %}
