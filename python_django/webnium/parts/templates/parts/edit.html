@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{job_job.job_name}}</h1>
+<a href="{% url 'update' job_id %}" class="btn btn-info float-right m-2">rename</a>
+ {{ job_id }}
+
+
+
+<a href="{% url 'delete' job_id %}" class="btn btn-danger float-right m-2">delete</a>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="{% url 'new_parts' %}" class="btn btn-danger float-right m-2">create new Parts</a>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">parts_name</th>
+        <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for part in parts %}
+
+    <tr>
+        <th scope="row">{{ part.id }}</th>
+        <td>{{ part.parts_name }}</td>
+        <td>{{ part.description }}</td>
+
+        </td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="text-center">
+    create parts
+</p>
+    <form action="{% url 'parts_confirm' %}" method="post">
+        {% csrf_token %}
+        parts_name:{{ parts_form.parts_name }}<br>
+        description:{{ parts_form.description }}<br>
+        {{ parts_form.parts_id.as_hidden }}
+        <button type="submit" class="btn btn-danger">create</button>
+    </form>
+
+{% endblock %}

@@ -23,7 +23,7 @@ def list(request):
         'message': "message",
         'jobs': jobs
     }
-    return render(request, 'list.html', params)
+    return render(request, 'job/list.html', params)
 
 
 def detail(request):
@@ -32,7 +32,7 @@ def detail(request):
     params = {
         'message': message,
     }
-    return render(request, 'detail.html', params)
+    return render(request, 'job/detail.html', params)
 
 
 def new_job(request):
@@ -45,7 +45,7 @@ def new_job(request):
         'message': "edit",
         'job_form': job_form
     }
-    return render(request, 'new_job.html', params)
+    return render(request, 'job/new_job.html', params)
 
 
 def update(request, job_id):
@@ -60,7 +60,7 @@ def update(request, job_id):
         'message': "edit",
         'job_form': job_form
     }
-    return render(request, 'new_job.html', params)
+    return render(request, 'job/new_job.html', params)
 
 
 def edit(request, job_id):
@@ -70,7 +70,7 @@ def edit(request, job_id):
         'job_id': job_id,
         'job_job': job_job
     }
-    return render(request, 'edit.html', context)
+    return render(request, 'job/edit.html', context)
 
 
 def delete(request, job_id):
@@ -79,7 +79,7 @@ def delete(request, job_id):
     context = {
         'result': True
     }
-    return render(request, 'delete.html', context)
+    return render(request, 'job/delete.html', context)
 
 
 def confirm(request, *args, **kwargs):
@@ -102,4 +102,4 @@ def confirm(request, *args, **kwargs):
         'job_name': job_name,
         'result': result
     }
-    return render(request, 'confirm.html', context)
+    return render(request, 'job/confirm.html', context)
