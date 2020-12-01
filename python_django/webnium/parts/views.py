@@ -26,6 +26,12 @@ def list(request):
 
 
 def new_parts(request):
+    javascript_list = {
+        "parts/parts.js"
+    }
+    css_list = {
+        "parts/parts.css"
+    }
     initial_dict = dict(
         parts_name="",
         description="",
@@ -34,7 +40,9 @@ def new_parts(request):
 
     params = {
         'message': "edit",
-        'parts_form': parts_form
+        'javascript_list':  javascript_list,
+        'parts_form': parts_form,
+        'css_list':css_list
     }
     return render(request, 'parts/new_parts.html', params)
 

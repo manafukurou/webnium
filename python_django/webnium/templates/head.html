@@ -5,11 +5,20 @@
    <title>{{ title }}</title>
     
 
+   {% for cssfile in css_commonlist %}
+   <link rel="stylesheet" href="{% static cssfile %}" >
+    {% endfor %}
+    {% for jsfile in javascript_commonlist %}
+    <script type="text/javascript" src="{% static jsfile %}"></script>
+    {% endfor %}
+
+
     {% for cssfile in css_list %}
         <link rel="stylesheet" href="{% static cssfile %}" >
     {% endfor %}
     {% for jsfile in javascript_list %}
         <script type="text/javascript" src="{% static jsfile %}"></script>
     {% endfor %}
+
 
 </head>
