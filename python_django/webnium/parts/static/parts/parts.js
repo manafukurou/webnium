@@ -3,12 +3,11 @@ $(function(){
     /// 各optionのテキストとvalue値の配列
     const optionCntList = [
         { text: '---select---', value: 'none' },
-        { text: 'open url', value: 'open_url' },
-        { text: 'click object', value: 'click_object' },
-        { text: 'input param', value: 'input_param' },
+        { text: 'open url', value: 'input_url' },
+        { text: 'click object', value: 'click_type' },
+        { text: 'input param', value: 'input_value' },
     ];
 
-          
     Sortable.create(task_list, {
         animation: 150,
     });
@@ -55,29 +54,27 @@ $(function(){
         return element;
     }
     function switchView(parent_div,selected){
-
+        
+        parent_div.find("div").hide();
         var selected_class_name = "."+selected;
-
-        parent_div.find(".open_url").text();
-        parent_div.find(".click_object").hide();
-        parent_div.find(".input_param").hide();
-
         parent_div.find(selected_class_name).show();
-        // console.log($(this).selected.value);
     }
     function getInputURL(){
 
         var element = $('<div />',{class: 'input_url'}).append("a");
+        element.hide();
         return element;
     }
     function getClickTypeSelectBox(){
 
         var element = $('<div />',{class: 'click_type'}).append("b");
+        element.hide();
         return element;
     }
     function getInputValue(){
 
         var element = $('<div />',{class: 'input_value'}).append("c");
+        element.hide();
         return element;
     }
 });
